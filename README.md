@@ -12,6 +12,8 @@
 
 [Архитектурные требования](docs/code-rules/architecture-rules.md "Архитектурные требования")
 
+[Требования к unit-тестам](docs/code-rules/unit-tests-rules.md "Требования к unit-тестам")
+
 ### Регламенты
 
 ### HOWTO
