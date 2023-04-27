@@ -1,10 +1,10 @@
-plugins:
-  - jekyll-relative-links
-relative_links:
-  enabled: true
-  collections: true
-include:
-  - docs/code-rules/architecture-rules.md
+#plugins:
+#  - jekyll-relative-links
+#relative_links:
+#  enabled: true
+#  collections: true
+#include:
+#  - docs/code-rules/architecture-rules.md
 #  - docs/code-rules/code-structure.md
 #  - docs/code-rules/language-usage.md
 #  - docs/code-rules/naming.md
