@@ -6,6 +6,8 @@
 
 [Описание архитектуры](docs/misc/architecture-description.md "Описание архитектуры")
 
+[Принципы разработки программного обеспечения](docs/misc/development-principles.md "Принципы разработки программного обеспечения")
+
 ### Требования к коду
 
 [Структура кода](docs/code-rules/code-structure.md "Структура кода")
