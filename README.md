@@ -4,18 +4,18 @@
 
 ### Требования к коду
 
-[Структура кода](docs/code-rules/code-structure "Структура кода")
+[Структура кода](docs/code-rules/code-structure.md "Структура кода")
 
-[Использование языковых конструкций](docs/code-rules/language-usage "Использование языковых конструкций")
+[Использование языковых конструкций](docs/code-rules/language-usage.md "Использование языковых конструкций")
 
-[Правила именования программных объектов](docs/code-rules/naming "Правила именования программных объектов")
+[Правила именования программных объектов](docs/code-rules/naming.md "Правила именования программных объектов")
 
-[Архитектурные требования](docs/code-rules/architecture-rules "Архитектурные требования")
+[Архитектурные требования](docs/code-rules/architecture-rules.md "Архитектурные требования")
 
-[Требования к unit-тестам](docs/code-rules/unit-tests-rules "Требования к unit-тестам")
+[Требования к unit-тестам](docs/code-rules/unit-tests-rules.md "Требования к unit-тестам")
 
 ### Регламенты
 
-[Правила проведения Code Review](docs/reglaments/code-review "Правила проведения Code Review")
+[Правила проведения Code Review](docs/reglaments/code-review.md "Правила проведения Code Review")
 
 ### HOWTO
