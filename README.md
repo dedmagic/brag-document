@@ -8,6 +8,8 @@
 
 [Принципы разработки программного обеспечения](docs/misc/development-principles.md "Принципы разработки программного обеспечения")
 
+[Дизайн классов при использовании Rich Domain Model](docs/misc/rich-domain-model.md "Дизайн классов при использовании Rich Domain Model")
+
 ### Требования к коду
 
 [Структура кода](docs/code-rules/code-structure.md "Структура кода")
