@@ -16,4 +16,6 @@
 
 ### Регламенты
 
+[Правила проведения Code Review](docs/reglaments/code-review "Правила проведения Code Review")
+
 ### HOWTO
