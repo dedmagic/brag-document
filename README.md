@@ -26,4 +26,6 @@
 
 [Правила проведения Code Review](docs/reglaments/code-review.md "Правила проведения Code Review")
 
+[Регламент проведения этапа проектирования ПО](docs/reglaments/design-review.md "Регламент проведения этапа проектирования ПО")
+
 ### HOWTO
