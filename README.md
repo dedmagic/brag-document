@@ -30,4 +30,8 @@
 
 [Положение об овнерстве](docs/reglaments/code-ownership.md "Положение об овнерстве")
 
+[SonarQube: порядок работы с выявленными проблемами (issues)](docs/reglaments/sonarqube.md "SonarQube: порядок работы с выявленными проблемами (issues)")
+
 ### HOWTO
+
+[Moq](docs/howto/moq.md "Moq")
