@@ -43,3 +43,5 @@
 [NUnit: параметризованные тесты](docs/howto/nunit-parameterized.md "NUnit: параметризованные тесты")
 
 [PlantUML: общие вопросы](docs/howto/plantuml-common.md "PlantUML: общие вопросы")
+
+[PlantUML: ER-диаграммы (структура БД)](docs/howto/plantuml-er.md "PlantUML: ER-диаграммы (структура БД)")
