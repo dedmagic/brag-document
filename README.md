@@ -41,3 +41,5 @@
 [NUnit](docs/howto/nunit.md "NUnit")
 
 [NUnit: параметризованные тесты](docs/howto/nunit-parameterized.md "NUnit: параметризованные тесты")
+
+[PlantUML: общие вопросы](docs/howto/plantuml-common.md "PlantUML: общие вопросы")
