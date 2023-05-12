@@ -45,3 +45,5 @@
 [PlantUML: общие вопросы](docs/howto/plantuml-common.md "PlantUML: общие вопросы")
 
 [PlantUML: ER-диаграммы (структура БД)](docs/howto/plantuml-er.md "PlantUML: ER-диаграммы (структура БД)")
+
+[PlantUML: диаграммы классов](docs/howto/plantuml-classes.md "PlantUML: диаграммы классов")
