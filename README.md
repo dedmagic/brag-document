@@ -2,6 +2,8 @@
 
 ## Документы (статьи)
 
+Примечание: документы конвертированы из Confluence в Markdown
+
 ### Разное
 
 [Описание архитектуры](docs/misc/architecture-description.md "Описание архитектуры")
@@ -47,3 +49,18 @@
 [PlantUML: ER-диаграммы (структура БД)](docs/howto/plantuml-er.md "PlantUML: ER-диаграммы (структура БД)")
 
 [PlantUML: диаграммы классов](docs/howto/plantuml-classes.md "PlantUML: диаграммы классов")
+
+## Документы Word и PDF
+
+[Яндекс.Диск](https://disk.yandex.ru/d/qWFmnOr5E7kqow) _или_  [Облако.Майл.Ру](https://cloud.mail.ru/public/B8SN/Fqtfmqjov)
+
+## Презентации PowerPoint
+
+[Яндекс.Диск](https://disk.yandex.ru/d/RI4SB1Z3ZG6VJw) _или_  [Облако.Майл.Ру](https://cloud.mail.ru/public/2TQd/KvpcYvCGZ)
+
+## Веб-презентации (reveal.js)
+
+[GitHub Pages](https://dedmagic.github.io/presentations/)
+ 
+
+
