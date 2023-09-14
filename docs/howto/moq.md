@@ -35,7 +35,7 @@ var service = CreateSut(repository: stubRepository.Object);
 
 **Вот несколько примеров**
 
-```
+```csharp
 stubPeriodService.Setup(ps => ps.GetPeriodTitleForCaption(It.IsAny<Period>()))
                  .Returns<Period>(period => $"text{period.Id.ToString()}");
 stubVariableService
@@ -54,7 +54,7 @@ mockIndicatorService
 **Ответ:** используй метод **`Throws`**, Люк!
 
 **Пример**
-```
+```csharp
 stubSrv.Setup(srv => srv.GetCurrentReportingStage())
        .Throws<InvalidOperationException>();
 ```
@@ -65,13 +65,13 @@ stubSrv.Setup(srv => srv.GetCurrentReportingStage())
 **Ответ:** либо с помощью метода **`SetupGet`**, либо так же, как и метод.
 
 **Пример 1. SetupGet**
-```
+```csharp
 var stubDateTimeProvider = new Mock<IDateTimeProvider>();
 var now = DateTime.Parse("2019-04-01");
 stubDateTimeProvider.SetupGet(dtp => dtp.Now).Returns(now);
 ```
 **Пример 2**
-```
+```csharp
 var stubDateTimeProvider = new Mock<IDateTimeProvider>();
 stubDateTimeProvider.Setup(dtp => dtp.CurrentYear).Returns(currentYear); // Read only property
 ```
@@ -92,7 +92,7 @@ stubDateTimeProvider.Setup(dtp => dtp.CurrentYear).Returns(currentYear); // Read
 **Ответ:** с помощью метода **`Verify`** мока и структуры **`Times`**.
 
 **Пример**
-```
+```csharp
 stubRepository.Verify(r => r.Update(It.IsAny<DAL.RiskLevelWeight>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<decimal>())
                          , Times.Exactly(ELEMENTS_COUNT));
 stubRepository.Verify(r => r.SaveRiskLevelWeights(It.IsAny<IEnumerable<DAL.RiskLevelWeight>>())
@@ -105,7 +105,7 @@ stubRepository.Verify(r => r.SaveRiskLevelWeights(It.IsAny<IEnumerable<DAL.RiskL
 **Ответ:**
 
 **Методы структуры Times**
-```
+```csharp
 public static Times AtLeast(int callCount);
 public static Times AtLeastOnce();
 public static Times AtMost(int callCount);
@@ -122,7 +122,7 @@ public static Times Once();
 **Ответ:** после всех нужных **`Verify`** используйте **`VerifyNoOtherCalls`**.
 
 **Пример**
-```
+```csharp
 mockDocumentRepository.Verify(repo => repo.UpdateDocumentComment(ANY_ID, comment)
                             , Times.Once);
 mockDocumentRepository.VerifyNoOtherCalls();
@@ -140,7 +140,7 @@ mockDocumentRepository.VerifyNoOtherCalls();
 **Ответ:**
 
 **Методы класса It**
-```
+```csharp
 public static TValue Is<TValue>(Expression<Func<TValue, bool>> match);
 public static TValue IsAny<TValue>();
 public static TValue IsIn<TValue>(IEnumerable<TValue> items);
@@ -153,7 +153,7 @@ public static string IsRegex(string regex);
 public static string IsRegex(string regex, RegexOptions options);
 ```
 **Примеры использования**
-```
+```csharp
 mock.Setup(foo => foo.Add(It.Is<int>(i => i % 2 == 0))).Returns(true);
 mock.Setup(foo => foo.Add(It.IsInRange<int>(0, 10, Range.Inclusive))).Returns(true);
 mock.Setup(x => x.DoSomethingStringy(It.IsRegex("[a-d]+", RegexOptions.IgnoreCase))).Returns("foo");
@@ -165,7 +165,7 @@ mock.Setup(x => x.DoSomethingStringy(It.IsRegex("[a-d]+", RegexOptions.IgnoreCas
 **Ответ:** в методе **`Verify`** вместо использования класса **`It`** указать эти конкретные значения.
 
 **Пример**
-```
+```csharp
 mockDocumentRepository.Verify(repo => repo.UpdateDocumentComment(ANY_ID, comment)
                             , Times.Once);
 ```
@@ -176,7 +176,7 @@ mockDocumentRepository.Verify(repo => repo.UpdateDocumentComment(ANY_ID, comment
 **Ответ:** с помощью метода **`Verifiable`**.
 
 **Пример**
-```
+```csharp
 _mockUserRepository.Setup(mr => mr.Update(It.IsAny<int>(), It.IsAny<string>()))
                    .Verifiable();
 ```
@@ -187,7 +187,7 @@ _mockUserRepository.Setup(mr => mr.Update(It.IsAny<int>(), It.IsAny<string>()))
 **Ответ:** да, вместо **`Returns`** нужно использовать **`CallBack`**.
 
 **Пример**
-```
+```csharp
 var stubIndicatorValidationService = new Mock<IIndicatorValidationService>();
 stubIndicatorValidationService.Setup(ivs => ivs.Validate(It.IsAny<Indicator>()
                                                        , It.IsAny<bool>()))
@@ -199,7 +199,7 @@ stubIndicatorValidationService.Setup(ivs => ivs.Validate(It.IsAny<Indicator>()
 Впрочем, можно использовать и то, и то одновременно:
 
 **Пример**
-```
+```csharp
 var calls = 0;
 mock.Setup(accountService => accountService.Notify(It.IsAny<AccountType>))
     .Returns(true)
@@ -219,7 +219,7 @@ mock.Setup(accountService => accountService.Notify(It.IsAny<AccountType>))
 В примере ниже в конструктор подменяемого класса передаются два значения **`null`**.
 
 **Пример**
-```
+```csharp
 private readonly object[] CTOR_PARAMS = new object[] { null, null };
 public void GetReportingStageIdByPeriod_NoPeriod_ReturnNull()
 {

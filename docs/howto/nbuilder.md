@@ -15,7 +15,7 @@
 **Ответ:** для создания экземпляра используется метод **CreateNew()**, для заполнения полей – метод **With()**.
 
 **Пример**
-```
+```csharp
 var dalGrbs = Builder<DAL.Grbs>
     .CreateNew()
     .With(g => g.Id = EXPECTED\_GRBS\_ID)
@@ -30,7 +30,7 @@ var dalGrbsHistory = Builder<DAL.GrbsHistory>
 **Примечание:** в случае нескольких последовательных вызовов метода **`With()`** можно их все, кроме первого, заменить на **`And()`**.
 
 **Пример**
-```
+```csharp
 var person = Builder<Person>
     .CreateNew()
     .With(p => p.Name = "Juke")
@@ -46,7 +46,7 @@ var person = Builder<Person>
 **Ответ:** использовать метод **`CreateListOfSize()`**. См. пример "Создание коллекции".  
 
 **Пример “Создание коллекции”**
-```
+```csharp
 private static IQueryable<DAL.BudgetCycle> GetDalBudgetCycles()
 {
     return Builder<DAL.BudgetCycle>
@@ -87,7 +87,7 @@ private static IQueryable<DAL.BudgetCycle> GetDalBudgetCycles()
 *   **`TheRest()`** – все оставшиеся элементы
 
 **Примеры**
-```
+```csharp
 var lst1 = Builder<Person>
     .CreateListOfSize(5)
     .TheFirst(2)
@@ -113,7 +113,7 @@ var lst2 = Builder<Person>
 **Ответ:** использовать класс **`Pick<T>`** и его метод **`RandomItemFrom()`**.
 
 **Пример**
-```
+```csharp
 var deps = Builder<Department>
     .CreateListOfSize(8)
     .Build();
@@ -131,7 +131,7 @@ var employees = Builder<Person>
 **Ответ:** использовать класс **`Pick<T>`** и его метод **`UniqueRandomList()`**.
 
 **Пример**
-```
+```csharp
 var employees = Builder<Person>
     .CreateListOfSize(20)
     .Build();

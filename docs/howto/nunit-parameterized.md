@@ -25,7 +25,7 @@
 Первый вариант использования: перед методом перечислить в атрибутах **`[TestCase]`** все наборы входных данных. Тестовый метод будет выполнен столько раз, сколько атрибутов указано, при этом параметры атрибута буду переданы в метод как входные параметры. Естественно, количество, тип и порядок параметров атрибутов и параметров метода должны совпадать.
 
 **Пример**
-```
+```csharp
 [TestCase("2018-01-01", "2018-01-03", "2018-01-02", true)]
 [TestCase("2018-01-01", "2018-01-01", "2018-01-01", true)]
 [TestCase("2018-01-01", "2018-01-02", "2018-01-03", false)]
@@ -35,7 +35,7 @@ public void IsInRange_AllCases(string beginDateStr, string endDateStr, string ch
 Можно несколько атрибутов объединить в один, но не рекомендуется, т.к. это ухудшает читабельность:
 
 **Пример**
-```
+```csharp
 [TestCase(2, true), TestCase(42, false)]
 public void SomeTest(int budgetCycleId, bool hasElements)
 ```
@@ -47,7 +47,7 @@ public void SomeTest(int budgetCycleId, bool hasElements)
 **Ответ:** в атрибут **`[TestCase]`** добавить параметр **`ExpectedResult`**. В этом случае в тесте вместо **`Assert`** используется возврат значения через **`return`**. Тест считается пройденным, если возвращаемое им значение совпало со значением **`ExpectedResult`**.
 
 **Пример**
-```
+```csharp
 [TestCase("100500", ProgramTypeEnum.Program, ProgramTypeEnum.Program, ExpectedResult = "100500")]
 [TestCase("100500", ProgramTypeEnum.Program, ProgramTypeEnum.SubProgram, ExpectedResult = null)]
 [TestCase("100500", ProgramTypeEnum.Program, ProgramTypeEnum.MainAction, ExpectedResult = null)]
@@ -69,7 +69,7 @@ public string GetStateRegulationItemCodeTest(string code, ProgramTypeEnum actual
 **Ответ**: в атрибуте **`[TestCaseSource]`** в качестве параметра указывается имя либо статической коллекции **`IEnumerable`** (см. пример 1), либо статического метода, возвращающего такую коллекцию (см. пример 2). Тестовый метод будет вызван для каждого элемента этой коллекции.
 
 **Пример 1**
-```
+```csharp
 private static readonly List<int> _indicatorIds = new List<int>
 {
     FinManagementConfig.IndicatorP25Id,
@@ -86,7 +86,7 @@ public void TrySpecialCalculationP_OivInCategory_ReturnsNotNull(int indicatorId)
 ```
 
 **Пример 2**
-```
+```csharp
 private static object[] ValidateCodeFormatTestCases()
 {
     return new object[]
@@ -138,7 +138,7 @@ public void ValidateCodeFormat_AllTestCases(string code, bool hasCodeErrors, str
 **Ответ:** первый вариант – данные для теста можно представить в виде массива **`object[]`** (или коллекции **`IEnumerable<object>`**), который содержит все тест-кейсы, каждый элемент которого в свою очередь является массивом **`object[]`**, который содержит значения всех параметров теста. См. пример 2 из предыдущего вопроса и пример ниже.
 
 **Пример**
-```
+```csharp
 private static IEnumerable<object> GetPeriodTitleForCaptionTestCases()
 {
     yield return new object[] { null, 1, "за I квартал 0 года" };
@@ -168,7 +168,7 @@ public void GetPeriodTitleForCaption_AllCasesExpceptPeriodIsNull(int year, int r
 **Ответ:** можно "упаковать" все параметры теста в один объект типа **`TestCaseData`**, в этом случае источником данных для теста является коллекция **`IEnumerable<TestCaseData>`** или метод, возвращающий такую коллекцию.
 
 **Пример**
-```
+```csharp
 private static IEnumerable<TestCaseData> ContainsRowCases()
 {
     yield return new TestCaseData(false, Dimension.MinValue, false, null);
@@ -190,7 +190,7 @@ public void ToFlat_TopLevelDimension_ContainsRows(bool isResultContainsRow, Dime
 **Ответ:** к ним можно с помощью метода **`Returns`** "прикреплять" ожидаемое возвращаемое значение, это действует подобно параметру **`ExpectedResult`** в атрибуте **`[TestCase]`**. Т.е. при использовании данной возможности тест должен вместо явного использования assert-ов возвращать значение через **`return`**, оно будет сверяться с указанным в объекте **`TestCaseData`** и в случае несовпадения тест счтитается непройденным.
 
 **Пример**
-```
+```csharp
 private static IEnumerable<TestCaseData> GetKspsTestCases()
 {
     var ksps = GetDalKsps();
@@ -235,7 +235,7 @@ public IEnumerable<int> GetKsps_AllScenarios(KspSortType? sortType, SortDirectio
 **Ответ:** в простейших случаях тест-кейсы можно перечислить в атрибуте , применяемом к параметру метода. Вместо
 
 **Пример. TestCase**
-```
+```csharp
 [TestCase("12")]
 [TestCase("123")]
 [TestCase("")]
@@ -246,7 +246,7 @@ public void OrderedCode_CodeLengthNotEqualOne_ReturnTheSameCode(string code)
 можно написать
 
 **Пример. Values**
-```
+```csharp
 public void OrderedCode_CodeLengthNotEqualOne_ReturnTheSameCode([Values("12", "123", "", null)] string code)
 ```
 
@@ -257,7 +257,7 @@ public void OrderedCode_CodeLengthNotEqualOne_ReturnTheSameCode([Values("12", "1
 **Ответ:** можно перебрать **все** значения для ограниченных типов, таких как **`bool`** или **`enum`**. Вместо
 
 **Пример. TestCase**
-```
+```csharp
 [TestCase(true)]
 [TestCase(false)]
 public void SetSaveState_TheSameSaveState_NoChanges(bool saveState)
@@ -266,7 +266,7 @@ public void SetSaveState_TheSameSaveState_NoChanges(bool saveState)
 можно
 
 **Пример. Values**
-```
+```csharp
 [Test]
 public void SetSaveState_TheSameSaveState_NoChanges([Values] bool saveState)
 ```

@@ -17,7 +17,7 @@
 **Ответ:** надо к классу добавить атрибут **`[TestFixture]`**.
 
 **Пример:**
-```
+```csharp
 [TestFixture]
 public class PeriodServiceTests
 ```
@@ -28,7 +28,7 @@ public class PeriodServiceTests
 **Ответ:** надо к методу добавить один из атрибутов **`[Test]`**, **`[TestCase(...)]`** или **`[TestCaseSource(...)]`**.
 
 **Пример:**
-```
+```csharp
 [Test]
 public void SetCurrentReportingStage\_NoNewReportingStage\_ThrowsException()
 ```
@@ -41,7 +41,7 @@ public void SetCurrentReportingStage\_NoNewReportingStage\_ThrowsException()
 **Ответ:** надо к тесту добавить атрибут **`[Ignore]`**, который можно сопроводить поясняющим текстом.
 
 **Пример:**
-```
+```csharp
 [Ignore("Поле Comment переехало в другую сущность (OivComment)")]
 [Test]
 public void UpdateSoCalculationValueComments\_RepositoryNotReturnsCollection\_ReturnsNoErrors()
