@@ -10,7 +10,7 @@
 3.  Получить нужную зависимость из свойства **`Object`** фейка.
 
 **Пример**
-```
+```csharp
 // Arrange
 var stubRepository = new Mock<ICalculationValueRepository>();
 stubRepository.Setup(r => r.GetCalculationValues(It.IsAny<int>()))
